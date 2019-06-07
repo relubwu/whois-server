@@ -1,0 +1,27 @@
+{
+  "name": "whois-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "sudo node --harmony app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relubwu/whois-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/relubwu/whois-server/issues"
+  },
+  "homepage": "https://github.com/relubwu/whois-server#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cos-nodejs-sdk-v5": "^2.5.9",
+    "express": "^4.17.1",
+    "md5": "^2.2.1",
+    "randomstring": "^1.1.5",
+    "tencentcloud-sdk-nodejs": "^3.0.64"
+  }
+}
