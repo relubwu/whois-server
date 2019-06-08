@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 const exec = require('util').promisify(require('child_process').exec);
 const cossdk = require('cos-nodejs-sdk-v5');
-const { SecretId, SecretKey, Bucket, Region, Prefix, Cache, Postfix } = require("./config/config.json");
+const { SecretId, SecretKey, Bucket, Region, Prefix, Cache, Postfix } = require(path.join(__dirname, 'config', 'config.json'));
 
 const COS = new cossdk({ SecretId, SecretKey });
 
