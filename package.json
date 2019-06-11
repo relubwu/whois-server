@@ -25,6 +25,7 @@
     "md5": "^2.2.1",
     "pug": "^2.0.3",
     "randomstring": "^1.1.5",
-    "tencentcloud-sdk-nodejs": "^3.0.64"
+    "tencentcloud-sdk-nodejs": "^3.0.64",
+    "ws": "^7.0.0"
   }
 }

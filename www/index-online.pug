@@ -19,8 +19,33 @@ html
               .card-body
                 i.fa.fa-5x.fa-check-circle.text-primary
                 h5.card-title Online
-                a.btn.btn-primary(href='#', contenteditable='true') Start Scanning
-              .card-footer.text-muted
-    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+                a#action.btn.btn-primary.text-light Start Scanning
+              #progress.card-footer.text-muted
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=', crossorigin='anonymous', style='')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut', crossorigin='anonymous')
     script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+    script(style='').
+      function initOperation() {
+      $('#action').toggleClass('disabled').html('Scanning...');
+      updateProgress('Sending command...');
+      }
+      function updateProgress(progress) {
+      $('#progress').html(progress);
+      }
+      $('document').ready(() => {
+      $('#action').click(() => {
+      initOperation();
+      $.get('https://lab.cuvita.info/initScan', data => {
+      console.log(true, data);
+      if (data.status == 'failed')
+      location.reload();
+      setInterval(() => {
+      $.get('https://lab.cuvita.info/status', data => {
+      updateProgress(data.status);
+      if (data.status == "Completed")
+      window.location.replace('https://lab.cuvita.info/result');
+      });
+      }, 200)
+      })
+      })
+      });
