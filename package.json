@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/relubwu/whois-server#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cos-nodejs-sdk-v5": "^2.5.9",
     "express": "^4.17.1",
