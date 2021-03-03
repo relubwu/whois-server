@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "log-timestamp": "^0.3.0",
     "md5": "^2.2.1",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "randomstring": "^1.1.5",
     "tencentcloud-sdk-nodejs": "^3.0.64",
     "ws": "^7.0.0"
